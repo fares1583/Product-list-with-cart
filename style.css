@@ -1,469 +1,491 @@
 * {
-	box-sizing: border-box;
-	/* padding: 0;
-	margin: 0; */
-
+  box-sizing: border-box;
 }
 
 @font-face {
-	font-family: "redHat";
-	src: url("./assets/fonts/RedHatText-VariableFont_wght.ttf");
+  font-family: "redHat";
+  src: url("./assets/fonts/RedHatText-VariableFont_wght.ttf");
 }
 
 body {
-	font-family: "redHat", sans-serif;
-	box-sizing: border-box;
-	background-color: hsl(20, 50%, 98%);
+  font-family: "redHat", sans-serif;
+  box-sizing: border-box;
+  background-color: hsl(20, 50%, 98%);
+  margin: 0; /* Remove default margin for better responsiveness */
 }
 
-/*container holds all  the content*/
+/* Container holds all the content */
 .outer-container {
-	padding: 100px;
-	margin: 30px 50px;
+  padding: 5vw; /* Use relative units for padding */
+  margin: 2vw 3vw; /* Use relative units for margin */
+  max-width: 1200px; /* Set a max-width to prevent excessive stretching */
+  margin-left: auto;
+  margin-right: auto; /* Center the container */
 }
 
 .outer-container h2 {
-	margin-left: 50px;
+  margin-left: 3vw; /* Relative margin */
+  font-size: clamp(1.5rem, 4vw, 2rem); /* Responsive font size */
 }
 
+/* Main container with flex layout */
 .container {
-	display: flex;
-	gap: 30px;
-	justify-content: center;
-	align-items: start;
-
+  display: flex;
+  gap: 2vw; /* Relative gap */
+  justify-content: center;
+  align-items: start;
+  flex-wrap: wrap; /* Allow wrapping for smaller screens */
 }
 
+/* Cards section */
 .container .cards {
-	/* flex-grow: 1;
-	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-	column-gap: 15px;
-	place-items: center;
-	position: relative; */
-	display: flex;
-	gap: 15px;
-	flex-wrap: wrap;
-	flex: 2;
-	margin-left: 50px;
-	max-width: 1000px;
+  display: flex;
+  gap: 1.5vw; /* Relative gap */
+  flex-wrap: wrap;
+  flex: 2;
+  margin-left: 3vw; /* Relative margin */
+  max-width: 1000px;
+  justify-content: center; /* Center cards for better alignment */
 }
 
-
+/* Individual card */
 .container .cards .card {
-	/* background-color: hsl(0, 0%, 100%); */
-	max-width: 250px;
+  max-width: 250px;
+  width: 100%; /* Allow cards to scale with container */
+  flex: 1 1 200px; /* Flexible basis for responsiveness */
 }
 
+/* Card image */
 .container .cards .card img {
-	width: 100%;
-	height: auto;
-	border-radius: 6px;
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
 }
 
+/* Add to cart button */
 .container .cards .card .add-to-cart {
-	width: 25px;
+  width: 25px;
 }
 
-
+/* Image/add-to-cart button container */
 .container .cards .image {
-	background-color: #fff;
-	width: 200px;
-	height: 51px;
-	color: hsl(12, 20%, 44%);
-	border: 1px solid hsl(12, 20%, 44%);
-	border-radius: 30px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	gap: 10px;
-	font-weight: 700;
-	position: relative;
-	top: -30px;
-	right: -25px;
-	user-select: none;
-	cursor: pointer;
-
+  background-color: #fff;
+  width: 200px;
+  height: 51px;
+  color: hsl(12, 20%, 44%);
+  border: 1px solid hsl(12, 20%, 44%);
+  border-radius: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  position: relative;
+  top: -30px;
+  right: -25px;
+  user-select: none;
+  cursor: pointer;
 }
 
+/* Card info */
 .container .cards .card .info {
-	font-weight: 700;
-	margin-left: 5px;
-	margin-top: -30px;
+  font-weight: 700;
+  margin-left: 5px;
+  margin-top: -30px;
 }
 
 .container .cards .card .info .des-name {
-
-	color: hsl(14, 25%, 72%);
-
+  color: hsl(14, 25%, 72%);
 }
 
 .container .cards .card .info .des-details {
-
-	color: hsl(12, 20%, 44%);
-
+  color: hsl(12, 20%, 44%);
 }
 
 .container .cards .card .info .price {
-	color: hsl(14, 86%, 42%);
-
+  color: hsl(14, 86%, 42%);
 }
 
+/* Orders section */
 .container .orders {
-	/* flex-grow: 1; */
-	padding: 15px;
-	background-color: #fff;
-	display: flex;
-	justify-content: start;
-	align-items: center;
-	flex-direction: column;
-	max-width: 400px;
-	border-radius: 6px;
-
+  padding: 15px;
+  background-color: #fff;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: column;
+  max-width: 400px;
+  width: 100%; /* Full width on smaller screens */
+  border-radius: 6px;
 }
 
 .container .orders h2 {
-	margin: 0 0 0 -95px;
-	color: hsl(14, 86%, 42%);
+  margin: 0 0 0 -5vw; /* Relative margin */
+  color: hsl(14, 86%, 42%);
+  font-size: clamp(1.2rem, 3vw, 1.5rem); /* Responsive font size */
 }
 
 .container .orders .cart-empty {
-	color: hsl(14, 25%, 72%);
-	font-weight: 700;
-	margin-left: 5px;
+  color: hsl(14, 25%, 72%);
+  font-weight: 700;
+  margin-left: 5px;
 }
 
-/* 000000000000000 */
-
+/* Card image border when selected */
 .card-img-border-red {
-	border: 3px solid #d23a0f;
-
+  border: 3px solid #d23a0f;
 }
 
-
+/* Increment/decrement buttons */
 .card .inc-decre {
-	background-color: hsl(14, 86%, 42%);
-	color: hsl(20, 50%, 98%);
-	width: 200px;
-	height: 51px;
-	border-radius: 30px;
-	position: relative;
-	top: -30px;
-	right: -25px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	gap: 50px;
-
-
-
-
-	.decrement, .increment {
-
-		font-size: 25px;
-		font-weight: 300;
-		width: 25px;
-		height: 25px;
-		border-radius: 50%;
-		border: 1px solid hsl(20, 50%, 98%);
-		display: flex;
-		justify-content: center;
-		cursor: pointer;
-		user-select: none;
-		align-items: center;
-		transition: 0.3s;
-	}
-
-	.decrement:hover, .increment:hover {
-		background-color: hsl(20, 50%, 98%);
-		color: hsl(14, 86%, 42%)
-	}
+  background-color: hsl(14, 86%, 42%);
+  color: hsl(20, 50%, 98%);
+  width: 200px;
+  height: 51px;
+  border-radius: 30px;
+  position: relative;
+  top: -30px;
+  right: -25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
 }
 
+.card .inc-decre .decrement,
+.card .inc-decre .increment {
+  font-size: 25px;
+  font-weight: 300;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  border: 1px solid hsl(20, 50%, 98%);
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  user-select: none;
+  align-items: center;
+  transition: 0.3s;
+}
 
+.card .inc-decre .decrement:hover,
+.card .inc-decre .increment:hover {
+  background-color: hsl(20, 50%, 98%);
+  color: hsl(14, 86%, 42%);
+}
+
+/* Order info */
 .order-info {
-	width: 15em;
-	font-size: 18px;
-	font-weight: 700;
-	margin-left: 15px;
-	border-bottom: 1px solid hsl(13, 31%, 94%);
-	padding: 18px 0;
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-
-
-	p {
-		/* margin-bottom: 10px; */
-		font-size: 20px;
-		color: hsl(12, 20%, 44%);
-
-	}
-
-	span {
-		margin-right: 15px;
-		font-size: 19px;
-	}
-
-	span.amount {
-		color: hsl(14, 86%, 42%);
-	}
-
-	span.item-price {
-		color: hsl(14, 25%, 72%);
-		font-weight: 500;
-	}
-
-	span.total-price {
-		color: hsl(7, 20%, 60%);
-	}
-
-	div.delete {
-		cursor: pointer;
-		font-weight: 500;
-		font-size: 16px;
-		color: hsl(14, 25%, 72%);
-		border-radius: 50%;
-		border: 1px solid hsl(14, 25%, 72%);
-		width: 15px;
-		height: 15px;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		transition: 0.3s;
-		font-size: 12px;
-	}
-
-	div.delete:hover {
-
-		color: hsl(12, 20%, 44%);
-		border-color: hsl(12, 20%, 44%);
-	}
+  width: 100%; /* Full width for responsiveness */
+  max-width: 15em;
+  font-size: clamp(16px, 2.5vw, 18px); /* Responsive font size */
+  font-weight: 700;
+  margin-left: 15px;
+  border-bottom: 1px solid hsl(13, 31%, 94%);
+  padding: 18px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
+.order-info p {
+  font-size: clamp(18px, 2.8vw, 20px);
+  color: hsl(12, 20%, 44%);
+}
+
+.order-info span {
+  margin-right: 15px;
+  font-size: clamp(17px, 2.5vw, 19px);
+}
+
+.order-info span.amount {
+  color: hsl(14, 86%, 42%);
+}
+
+.order-info span.item-price {
+  color: hsl(14, 25%, 72%);
+  font-weight: 500;
+}
+
+.order-info span.total-price {
+  color: hsl(7, 20%, 60%);
+}
+
+.order-info div.delete {
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 12px;
+  color: hsl(14, 25%, 72%);
+  border-radius: 50%;
+  border: 1px solid hsl(14, 25%, 72%);
+  width: 15px;
+  height: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s;
+}
+
+.order-info div.delete:hover {
+  color: hsl(12, 20%, 44%);
+  border-color: hsl(12, 20%, 44%);
+}
+
+/* Order total */
 .order-total {
-	color: hsl(12, 20%, 44%);
-	display: none;
-	justify-content: center;
-	align-items: center;
-	gap: 150px;
-	order: 99;
-
-	div {
-		font-size: 23px;
-		font-weight: 700;
-		color: hsl(14, 65%, 9%);
-
-	}
+  color: hsl(12, 20%, 44%);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  gap: 150px;
+  order: 99;
 }
 
+.order-total div {
+  font-size: clamp(20px, 3vw, 23px);
+  font-weight: 700;
+  color: hsl(14, 65%, 9%);
+}
+
+/* Carbon image */
 .carbon-image {
-	display: none;
-	justify-content: center;
-	align-items: center;
-	font-size: 15px;
-	background-color: hsl(13, 31%, 94%);
-	padding: 15px 10px;
-	border-radius: 6px;
-	order: 100;
-	margin-top: 25px;
-	user-select: none;
-
-	img {
-		margin-right: 15px;
-	}
+  display: none;
+  justify-content: center;
+  align-items: center;
+  font-size: clamp(13px, 2vw, 15px);
+  background-color: hsl(13, 31%, 94%);
+  padding: 15px 10px;
+  border-radius: 6px;
+  order: 100;
+  margin-top: 25px;
+  user-select: none;
 }
 
+.carbon-image img {
+  margin-right: 15px;
+}
+
+/* Confirm order button */
 .confirm-order {
-	margin-top: 25px;
-
-	.order-btn {
-		border: navajowhite;
-		padding: 15px 20px;
-		border-radius: 50px;
-		width: 280px;
-		transition: 0.3s;
-		background-color: hsl(12, 86%, 49%);
-		cursor: pointer;
-		color: hsl(13, 31%, 94%);
-		font-size: 18px;
-		display: none;
-		justify-content: center;
-		align-items: center;
-
-	}
-
-	order: 150;
-
+  margin-top: 25px;
 }
 
-.confirm-order.order-btn,
+.confirm-order .order-btn,
 .overlay .final-order-btn {
-	border: navajowhite;
-	padding: 15px 20px;
-	border-radius: 50px;
-	width: 280px;
-	transition: 0.3s;
-	background-color: hsl(12, 86%, 49%);
-	cursor: pointer;
-	color: hsl(13, 31%, 94%);
-	font-size: 18px;
-	display: none;
-	justify-content: center;
-	align-items: center;
-
+  border: none;
+  padding: 15px 20px;
+  border-radius: 50px;
+  width: 280px;
+  transition: 0.3s;
+  background-color: hsl(12, 86%, 49%);
+  cursor: pointer;
+  color: hsl(13, 31%, 94%);
+  font-size: clamp(16px, 2.5vw, 18px);
+  display: none;
+  justify-content: center;
+  align-items: center;
 }
 
 .confirm-order .order-btn:hover,
 .overlay .final-order-btn:hover {
-	background-color: hsl(12, 88%, 34%);
-
+  background-color: hsl(12, 88%, 34%);
 }
 
 .overlay .final-order-btn {
-	display: block;
-	width: 15rem;
-	padding: 15px 0;
-	font-size: 14px;
-	margin: 15px auto;
+  display: block;
+  width: 15rem;
+  padding: 15px 0;
+  font-size: clamp(12px, 2vw, 14px);
+  margin: 15px auto;
 }
 
+/* Overlay for final order */
 .overlay {
-	position: none;
-	top: 0;
-	left: 0;
-	height: 100%;
-	width: 100%;
-	background-color: #05050589;
-	z-index: 2;
-	display: grid;
-	place-items: center;
+  position: fixed; /* Changed from none to fixed for proper overlay */
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #05050589;
+  z-index: 2;
+  display: grid;
+  place-items: center;
 }
 
 .overlay .holder {
-	background-color: hsl(20, 50%, 98%);
-	width: 350px;
-	border-radius: 7px;
-	padding: 20px;
-	box-shadow: 0px 0px 5px #5f5e5e89;
-	display: none;
-	overflow-y: auto;
-	max-height: 600px;
-
-
-	scrollbar-width: thin;
-	scrollbar-color: #dfd0ce #f0f0f0;
-	white-space: nowrap;
-
-	img.confirmed {
-		margin: 0;
-		width: 30px;
-	}
-
-	h3 {
-		font-size: 30px;
-		margin: 0;
-		color: hsl(14, 65%, 9%);
-	}
-
-	p {
-		margin: 5px 0 0 0;
-		font-size: 16px;
-		color: hsl(7, 20%, 60%)
-	}
-
-	.final-order {
-		background-color: hsl(13, 31%, 94%);
-		padding: 10px;
-		margin-top: 15px;
-	}
-
-	.total {
-		display: flex;
-		gap: 10px;
-		align-items: center;
-
-		span:first-child {
-			color: hsl(12, 20%, 44%);
-			font-size: 13px;
-		}
-
-		span:last-child {
-			font-size: 18px;
-			font-weight: bold;
-			color: hsl(14, 65%, 9%);
-		}
-
-
-	}
+  background-color: hsl(20, 50%, 98%);
+  width: 90%; /* Relative width */
+  max-width: 350px;
+  border-radius: 7px;
+  padding: 20px;
+  box-shadow: 0px 0px 5px #5f5e5e89;
+  display: none;
+  overflow-y: auto;
+  max-height: 80vh; /* Relative height */
+  scrollbar-width: thin;
+  scrollbar-color: #dfd0ce #f0f0f0;
+  white-space: nowrap;
 }
 
+.overlay .holder img.confirmed {
+  margin: 0;
+  width: 30px;
+}
+
+.overlay .holder h3 {
+  font-size: clamp(24px, 4vw, 30px);
+  margin: 0;
+  color: hsl(14, 65%, 9%);
+}
+
+.overlay .holder p {
+  margin: 5px 0 0 0;
+  font-size: clamp(14px, 2.5vw, 16px);
+  color: hsl(7, 20%, 60%);
+}
+
+.overlay .holder .final-order {
+  background-color: hsl(13, 31%, 94%);
+  padding: 10px;
+  margin-top: 15px;
+}
+
+.overlay .holder .total {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.overlay .holder .total span:first-child {
+  color: hsl(12, 20%, 44%);
+  font-size: clamp(11px, 2vw, 13px);
+}
+
+.overlay .holder .total span:last-child {
+  font-size: clamp(16px, 2.5vw, 18px);
+  font-weight: bold;
+  color: hsl(14, 65%, 9%);
+}
 
 .final-order div:not(:last-child) {
-	padding: 10px;
-	border-bottom: 1px solid hsla(6, 20%, 60%, 0.285);
+  padding: 10px;
+  border-bottom: 1px solid hsla(6, 20%, 60%, 0.285);
+}
 
+.final-order .order-name {
+  color: hsl(14, 65%, 9%);
+  font-weight: 800;
+  margin-bottom: 10px;
+}
 
-	.order-name {
-		color: hsl(14, 65%, 9%);
-		font-weight: 800;
-		margin-bottom: 10px;
+.final-order .amount {
+  color: hsl(14, 86%, 42%);
+  font-weight: 800;
+  margin-right: 20px;
+}
 
-	}
+.final-order .item-price {
+  margin-right: 20px;
+  color: hsl(14, 17%, 65%);
+}
 
-	.amount {
-		color: hsl(14, 86%, 42%);
-		font-weight: 800;
-		margin-right: 20px;
-
-	}
-
-	.item-price {
-		margin-right: 20px;
-		color: hsl(14, 17%, 65%);
-	}
-
-	.total-price {
-
-		font-weight: bold;
-		color: hsl(14, 65%, 9%);
-	}
-
-
+.final-order .total-price {
+  font-weight: bold;
+  color: hsl(14, 65%, 9%);
 }
 
 .final-order .order-total {
-	border: none;
-	gap: 80px;
-	margin: 10px 0;
+  border: none;
+  gap: 80px;
+  margin: 10px 0;
 }
 
-/* 
-.image {
-	width: 80px;
-	height: 80px;
-	margin-right: 20px;
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .outer-container {
+    padding: 3vw;
+    margin: 2vw;
+  }
+
+  .outer-container h2 {
+    margin-left: 0;
+    text-align: center;
+  }
+
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .container .cards {
+    margin-left: 0;
+    max-width: 100%;
+    justify-content: center;
+  }
+
+  .container .cards .card {
+    max-width: 300px; /* Slightly larger for smaller screens */
+    flex: 1 1 100%; /* Full width cards */
+  }
+
+  .container .cards .image,
+  .card .inc-decre {
+    width: 150px; /* Smaller buttons on mobile */
+    right: -10px; /* Adjust positioning */
+  }
+
+  .container .orders {
+    max-width: 100%;
+    margin-top: 2vw;
+  }
+
+  .container .orders h2 {
+    margin-left: 0;
+    text-align: center;
+  }
+
+  .order-total {
+    gap: 50px; /* Reduce gap for smaller screens */
+  }
+
+  .overlay .holder {
+    width: 95%;
+    max-height: 70vh;
+  }
 }
 
-.item-details {
-	flex: 1;
-}
+@media (max-width: 480px) {
+  .container .cards .image,
+  .card .inc-decre {
+    width: 120px;
+    height: 40px;
+    font-size: 14px;
+    gap: 20px;
+    top: -20px;
+    right: -5px;
+  }
 
-.quantity {
-	font-weight: bold;
-	margin-right: 10px;
-}
+  .card .inc-decre .decrement,
+  .card .inc-decre .increment {
+    font-size: 20px;
+    width: 20px;
+    height: 20px;
+  }
 
-.price {
-	font-size: 1.2em;
-	font-weight: bold;
-	margin-left: auto;
-}
+  .order-info {
+    font-size: 14px;
+  }
 
-.total {
-	padding: 20px;
-	border-top: 1px solid #ccc;
-	font-size: 1.5em;
-	font-weight: bold;
-	text-align: right;
-}  */
+  .order-info p,
+  .order-info span {
+    font-size: 14px;
+  }
+
+  .confirm-order .order-btn,
+  .overlay .final-order-btn {
+    width: 100%;
+    max-width: 200px;
+    padding: 10px;
+    font-size: 14px;
+  }
+}
