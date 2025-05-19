@@ -489,3 +489,187 @@ body {
     font-size: 14px;
   }
 }
+
+
+/* deepseek */  
+
+/* Existing base styles remain the same */
+* {
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "redHat";
+  src: url("./assets/fonts/RedHatText-VariableFont_wght.ttf");
+}
+
+body {
+  font-family: "redHat", sans-serif;
+  box-sizing: border-box;
+  background-color: hsl(20, 50%, 98%);
+  margin: 0;
+}
+
+.outer-container {
+  padding: 5vw;
+  margin: 2vw 3vw;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.outer-container h2 {
+  margin-left: 3vw;
+  font-size: clamp(1.5rem, 4vw, 2rem);
+}
+
+/* Modified container and cards section for mobile */
+.container {
+  display: flex;
+  gap: 2vw;
+  justify-content: center;
+  align-items: start;
+  flex-wrap: wrap;
+}
+
+.container .cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 3vw;
+  flex: 2;
+  margin-left: 0;
+  max-width: 100%;
+  width: 100%;
+  justify-content: center;
+}
+
+/* Modified card styles for mobile */
+.container .cards .card {
+  max-width: none;
+  width: 100%;
+  flex: 0 0 calc(50% - 1.5vw); /* Two cards per row with gap */
+}
+
+.container .cards .card img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+}
+
+/* Adjust add-to-cart button for mobile */
+.container .cards .image {
+  background-color: #fff;
+  width: 120px;
+  height: 40px;
+  color: hsl(12, 20%, 44%);
+  border: 1px solid hsl(12, 20%, 44%);
+  border-radius: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  font-weight: 700;
+  position: relative;
+  top: -20px;
+  right: -10px;
+  font-size: 12px;
+  user-select: none;
+  cursor: pointer;
+}
+
+.container .cards .card .add-to-cart {
+  width: 18px;
+}
+
+/* Adjust increment/decrement buttons for mobile */
+.card .inc-decre {
+  background-color: hsl(14, 86%, 42%);
+  color: hsl(20, 50%, 98%);
+  width: 120px;
+  height: 40px;
+  border-radius: 30px;
+  position: relative;
+  top: -20px;
+  right: -10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  font-size: 12px;
+}
+
+.card .inc-decre .decrement,
+.card .inc-decre .increment {
+  font-size: 16px;
+  font-weight: 300;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 1px solid hsl(20, 50%, 98%);
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  user-select: none;
+  align-items: center;
+  transition: 0.3s;
+}
+
+/* Card info adjustments */
+.container .cards .card .info {
+  font-weight: 700;
+  margin-left: 5px;
+  margin-top: -20px;
+  font-size: 14px;
+}
+
+/* Orders section remains the same */
+.container .orders {
+  padding: 15px;
+  background-color: #fff;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: column;
+  max-width: 400px;
+  width: 100%;
+  border-radius: 6px;
+  margin-top: 20px;
+}
+
+/* Media Queries for specific adjustments */
+@media (min-width: 480px) and (max-width: 768px) {
+  .container .cards {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+  
+  .container .cards .image,
+  .card .inc-decre {
+    width: 150px;
+    height: 45px;
+  }
+  
+  .container .cards .card .info {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 769px) {
+  .container .cards {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 3vw;
+  }
+  
+  .container .cards .card {
+    flex: 1 1 200px;
+    max-width: 250px;
+  }
+  
+  .container .cards .image,
+  .card .inc-decre {
+    width: 200px;
+    height: 51px;
+  }
+}
+
+/* The rest of your existing CSS remains unchanged */
